@@ -66,6 +66,16 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             <H2>
               <FormattedMessage {...messages.trymeHeader} />
             </H2>
+
+      <p className="bs-component">
+        <button type="button" className="btn btn-primary">Primary</button>
+        <button type="button" className="btn btn-secondary">Secondary</button>
+        <button type="button" className="btn btn-success">Success</button>
+        <button type="button" className="btn btn-info">Info</button>
+        <button type="button" className="btn btn-warning">Warning</button>
+        <button type="button" className="btn btn-danger">Danger</button>
+        <button type="button" className="btn btn-link">Link</button>
+      </p>
             <Form onSubmit={this.props.onSubmitForm}>
               <label htmlFor="username">
                 <FormattedMessage {...messages.trymeMessage} />
