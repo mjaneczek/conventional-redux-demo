@@ -8833,3 +8833,15 @@ body {
   font-size: 8px;
   line-height: 8px;
 }
+
+.navbar-collapse.collapse {
+  display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+  float: left !important;
+}
+
+.navbar-right {
+  float: right!important;
+}

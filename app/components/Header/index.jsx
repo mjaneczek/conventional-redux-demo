@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 export default () => <div className="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
   <div className="container">
     <Link to="/" className="navbar-brand">Conventional-Redux.js</Link>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon" />
-    </button>
+
     <div className="collapse navbar-collapse" id="navbarResponsive">
       <ul className="navbar-nav">
         <li className="nav-item">
@@ -19,7 +17,7 @@ export default () => <div className="navbar navbar-expand-lg navbar-dark bg-prim
           <Link className="nav-link" to="/computed-reducers">Computed Reducers</Link>
         </li>
       </ul>
-      <ul className="nav navbar-nav ml-auto">
+      <ul className="nav navbar-nav navbar-right">
         <li className="nav-item">
           <a className="nav-link" href="https://github.com/mjaneczek/conventional-redux" target="_blank">GitHub</a>
         </li>
