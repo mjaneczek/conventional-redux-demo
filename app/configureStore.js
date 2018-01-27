@@ -41,6 +41,9 @@ export default function configureStore(initialState = {}, history) {
   // Extensions
   store.injectedReducers = {}; // Reducer registry
 
+  // only for debug purpose!
+  window.store = store;
+
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */
   if (module.hot) {
