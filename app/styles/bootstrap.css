@@ -8845,3 +8845,7 @@ body {
 .navbar-right {
   float: right!important;
 }
+
+.hljs {
+  background: transparent !important;
+}
