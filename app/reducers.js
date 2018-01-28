@@ -5,6 +5,7 @@
 import { fromJS } from 'immutable';
 import { combineReducers } from 'redux-immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
+import { conventionalReducers } from 'conventional-redux';
 
 /*
  * routeReducer
@@ -41,5 +42,6 @@ export default function createReducer(injectedReducers) {
   return combineReducers({
     route: routeReducer,
     ...injectedReducers,
+    ...conventionalReducers(),
   });
 }

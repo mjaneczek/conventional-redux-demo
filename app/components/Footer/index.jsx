@@ -1,6 +1,7 @@
 import React from 'react';
+import { connectInteractors } from 'conventional-redux';
 
-export default () => <div className="container">
+const footer = () => <div className="container">
   <div className="card bg-light">
     <div className="card-header">Current State</div>
     <div className="card-body">
@@ -14,3 +15,5 @@ export default () => <div className="container">
 </div>
 
 const formattedCurrentState = () => JSON.stringify(window.store.getState().toJS(), null, 2)
+
+export default connectInteractors(footer, ['counter', 'route']);

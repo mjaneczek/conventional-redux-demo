@@ -6,11 +6,30 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import createReducer from './reducers';
-import logger from 'redux-logger';
+import { createLogger } from 'redux-logger'
+import { conventionalReduxMiddleware, setRecreateReducerFunction } from 'conventional-redux'
+
+const logger = createLogger({
+  stateTransformer: (state) => {
+    const newState = {};
+    const stateObj = state.toObject();
+
+    for (const i of Object.keys(stateObj)) {
+      if(stateObj[i].toJS) {
+        newState[i] = stateObj[i].toJS();
+      } else {
+        newState[i] = stateObj[i];
+      }
+    }
+
+    return newState;
+  }
+});
 
 export default function configureStore(initialState = {}, history) {
   const middlewares = [
     routerMiddleware(history),
+    conventionalReduxMiddleware,
     logger
   ];
 
@@ -43,6 +62,8 @@ export default function configureStore(initialState = {}, history) {
 
   // only for debug purpose!
   window.store = store;
+
+  setRecreateReducerFunction(() => store.replaceReducer(createReducer(store.injectedReducers)));
 
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */

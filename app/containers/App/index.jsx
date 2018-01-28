@@ -16,7 +16,7 @@ export default () => <div>
 
   <Header />
 
-  <div className="container">
+  <div className="container mb-4">
     <Switch>
       <Route exact path="/" component={HomePage} />
       <Route path="/promises-handling" component={PromisesHandlingPage} />
