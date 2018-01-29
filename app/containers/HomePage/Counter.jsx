@@ -7,12 +7,16 @@ class Counter extends React.Component {
       <div>
         <h3>Current value: {this.p('counter')}</h3>
 
-        <button className="btn btn-primary" onClick={() => this.d('counter:increment')}>
+        <button className="btn btn-primary mr-2" onClick={() => this.d('counter:increment')}>
           Increment
         </button>
 
-        <button className="btn btn-danger" onClick={() => this.d('counter:doubleAsync')}>
+        <button className="btn btn-danger mr-2" onClick={() => this.d('counter:doubleAsync')}>
           Double (Async)
+        </button>
+
+        <button className="btn btn-warning mr-2" onClick={() => this.d('counter:reset')}>
+          Reset
         </button>
       </div>
     )

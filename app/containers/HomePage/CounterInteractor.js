@@ -1,10 +1,18 @@
 export default class CounterInteractor {
   defaultState() {
-    return 0;
+    return 1;
   }
 
   doubleAsync() {
     setTimeout(() => { this.dispatch('counter:double') }, 500)
+  }
+
+  reset() {
+    alert("Reseting the state...");
+  }
+
+  onReset() {
+    return 1;
   }
 
   onIncrement() {
