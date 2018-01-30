@@ -1,13 +1,29 @@
-import React from 'react';
-import Highlight from 'react-highlight';
-import 'highlight.js/styles/agate.css';
+export default
+`// class style component
+class Counter extends React.Component {
+  render () {
+    return (
+      <div>
+        <h3>Current value: {this.property('counter')}</h3>
 
-export default () => <Highlight className='javascript' dangerousInnerHTML={true}>
-  {codeSnippet}
-</Highlight>
+        <button onClick={() => this.dispatch('counter:increment')}>
+          Increment
+        </button>
 
-const codeSnippet = `// component
-const Counter = (p,d) => (<div>
+        <button onClick={() => this.dispatch('counter:doubleAsync')}>
+          Double (Async)
+        </button>
+
+        <button onClick={() => this.d('counter:reset')}>
+          Reset
+        </button>
+      </div>
+    )
+  }
+}
+
+// functional style component (the equivalent)
+const Counter = (p,d) => <div>
   <h3>Current value: {p('counter')}</h3>
 
   <button onClick={() => d('counter:increment')}>
@@ -21,8 +37,9 @@ const Counter = (p,d) => (<div>
   <button onClick={() => d('counter:reset')}>
     Reset
   </button>
-</div>)
+</div>
 
+// connect method
 export default connectInteractors(Counter, ['counter']);
 
 // interactor

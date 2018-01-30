@@ -3,12 +3,7 @@ import request from 'utils/request';
 
 export default class GitHubInteractor {
   defaultState() {
-    return fromJS({
-      username: 'mjaneczek',
-      repos: [],
-      error: null,
-      loading: false
-    });
+    return fromJS({ username: 'mjaneczek', repos: [], error: null, loading: false });
   }
 
   fetch() {

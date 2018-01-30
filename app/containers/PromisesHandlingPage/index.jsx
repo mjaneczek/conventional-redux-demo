@@ -3,9 +3,10 @@ import { Helmet } from 'react-helmet';
 import { replaceDynamicInteractors } from 'conventional-redux';
 import PageHeader from 'components/PageHeader';
 import Card from 'components/Card';
+import Code from 'components/Code';
 import GitHubRepos from './components/GitHubRepos';
-import Code from './components/Code';
 import GitHubInteractor from './GitHubInteractor';
+import snippet from './snippet';
 
 export default class HomePage extends React.Component {
   componentWillMount() {
@@ -28,7 +29,7 @@ export default class HomePage extends React.Component {
         </Card>
 
         <Card title="Code" code={true}>
-          <Code />
+          <Code code={snippet} />
         </Card>
       </div>
     )
