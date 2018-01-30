@@ -4,7 +4,7 @@ import { replaceDynamicInteractors } from 'conventional-redux';
 import PageHeader from 'components/PageHeader';
 import Card from 'components/Card';
 
-export default class ComputedReducersPage extends React.Component {
+export default class DynamicInteractorsPage extends React.Component {
   componentWillMount() {
     replaceDynamicInteractors({
 
@@ -15,10 +15,10 @@ export default class ComputedReducersPage extends React.Component {
     return(
       <div>
         <Helmet>
-          <title>Computed Reducers</title>
+          <title>Dynamic Interactors</title>
         </Helmet>
 
-        <PageHeader>IDK example - computed reducers</PageHeader>
+        <PageHeader>IDK example - dynamic interactors</PageHeader>
       </div>
     )
   }

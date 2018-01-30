@@ -16,6 +16,9 @@ export default () => <div className="navbar navbar-expand-lg navbar-dark bg-prim
         <li className="nav-item">
           <Link className="nav-link" to="/computed-reducers">Computed Reducers</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/dynamic-interactors">Dynamic Interactors</Link>
+        </li>
       </ul>
       <ul className="nav navbar-nav navbar-right">
         <li className="nav-item">
