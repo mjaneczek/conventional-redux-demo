@@ -1,10 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { replaceDynamicInteractors } from 'conventional-redux';
+import PageHeader from 'components/PageHeader';
+import Card from 'components/Card';
 
-export default () => <div>
-  <Helmet>
-    <title>Computed Reducers</title>
-  </Helmet>
+export default class HomePage extends React.Component {
+  componentWillMount() {
+    replaceDynamicInteractors({
 
-  <h1>Computed Reducers</h1>
-</div>
+    });
+  }
+
+  render() {
+    return(
+      <div>
+        <Helmet>
+          <title>Computed Reducers</title>
+        </Helmet>
+
+        <PageHeader>IDK example</PageHeader>
+      </div>
+    )
+  }
+}
