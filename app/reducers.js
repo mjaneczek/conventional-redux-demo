@@ -5,7 +5,7 @@
 import { fromJS } from 'immutable';
 import { combineReducers } from 'redux-immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
-import { conventionalReducers } from 'conventional-redux';
+import { createConventionalReduxRootReducer } from 'conventional-redux';
 
 /*
  * routeReducer
@@ -39,9 +39,8 @@ function routeReducer(state = routeInitialState, action) {
  * Creates the main reducer with the dynamically injected ones
  */
 export default function createReducer(injectedReducers) {
-  return combineReducers({
+  return createConventionalReduxRootReducer({
     route: routeReducer,
     ...injectedReducers,
-    ...conventionalReducers(),
-  });
+  }, combineReducers);
 }
