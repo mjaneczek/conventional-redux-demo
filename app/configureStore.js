@@ -15,7 +15,7 @@ const logger = createLogger({
     const stateObj = state.toObject();
 
     for (const i of Object.keys(stateObj)) {
-      if(stateObj[i].toJS) {
+      if(stateObj[i] && stateObj[i].toJS) {
         newState[i] = stateObj[i].toJS();
       } else {
         newState[i] = stateObj[i];

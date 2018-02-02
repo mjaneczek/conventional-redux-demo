@@ -14,6 +14,9 @@ export default () => <div className="navbar navbar-expand-lg navbar-dark bg-prim
           <Link className="nav-link" to="/promises-handling">Promises handling</Link>
         </li>
         <li className="nav-item">
+          <Link className="nav-link" to="/external-dependencies">External Dependencies</Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link" to="/computed-reducers">Computed Reducers</Link>
         </li>
         <li className="nav-item">

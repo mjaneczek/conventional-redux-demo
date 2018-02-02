@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage';
 import PromisesHandlingPage from 'containers/PromisesHandlingPage';
+import ExternalDependenciesPage from 'containers/ExternalDependenciesPage';
 import ComputedReducersPage from 'containers/ComputedReducersPage';
 import DynamicInteractorsPage from 'containers/DynamicInteractorsPage';
 
@@ -21,6 +22,7 @@ export default () => <div>
     <Switch>
       <Route exact path="/" component={HomePage} />
       <Route path="/promises-handling" component={PromisesHandlingPage} />
+      <Route path="/external-dependencies" component={ExternalDependenciesPage} />
       <Route path="/computed-reducers" component={ComputedReducersPage} />
       <Route path="/dynamic-interactors" component={DynamicInteractorsPage} />
     </Switch>
