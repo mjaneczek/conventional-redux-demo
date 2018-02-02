@@ -16,4 +16,4 @@ const footer = () => <div className="container">
 
 const formattedCurrentState = () => JSON.stringify(window.store.getState().toJS(), null, 2)
 
-export default connectInteractors(footer);
+export default connectInteractors(footer, ['counter', 'route']);

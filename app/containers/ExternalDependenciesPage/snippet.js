@@ -37,7 +37,7 @@ class CounterInteractor {
 
   externalDependencies() {
     return [
-      { on: 'cleaner:restart', call: this.onReset }
+      { on: ['cleaner:restart'], call: 'onReset' }
     ]
   }
 

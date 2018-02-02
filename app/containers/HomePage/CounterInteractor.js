@@ -1,6 +1,6 @@
 export default class CounterInteractor {
   defaultState() {
-    return 1;
+    return 0;
   }
 
   doubleAsync() {
@@ -12,7 +12,7 @@ export default class CounterInteractor {
   }
 
   onReset() {
-    return 1;
+    return 0;
   }
 
   onIncrement() {
