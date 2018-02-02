@@ -4,11 +4,13 @@ import { replaceDynamicInteractors } from 'conventional-redux';
 import { connectInteractors } from 'conventional-redux';
 import PageHeader from 'components/PageHeader';
 import Card from 'components/Card';
+import Code from 'components/Code';
 import GitHubRepos from './components/GitHubRepos';
 import GitHubInteractor from './GitHubInteractor';
 import FilterInteractor from './FilterInteractor';
+import snippet from './snippet';
 
-class ComputedReducersPage extends React.Component {
+class ComputedActionsPage extends React.Component {
   componentWillMount() {
     replaceDynamicInteractors({
       github: new GitHubInteractor(),
@@ -22,7 +24,7 @@ class ComputedReducersPage extends React.Component {
     return(
       <div>
         <Helmet>
-          <title>Computed Reducers</title>
+          <title>Computed Actions</title>
         </Helmet>
 
         <PageHeader>Language filter example</PageHeader>
@@ -30,9 +32,13 @@ class ComputedReducersPage extends React.Component {
         <Card title="Component">
           <GitHubRepos />
         </Card>
+
+        <Card title="Code" code={true}>
+          <Code code={snippet} />
+        </Card>
       </div>
     )
   }
 }
 
-export default connectInteractors(ComputedReducersPage, ['github']);
+export default connectInteractors(ComputedActionsPage, ['github']);
