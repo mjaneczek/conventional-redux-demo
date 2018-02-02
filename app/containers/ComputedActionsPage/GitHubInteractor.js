@@ -26,10 +26,11 @@ export default class GitHubInteractor {
   }
 
   onFetch() {
-    return this.state.set('loading', true).set('error', null).set('allRepos', [])
+    return this.state.set('loading', true).set('error', null).set('allRepos', []).set('repos', [])
   }
 
-  onFetchSuccess(repos) {
+  onFetchSuccess(response) {
+    const repos = response.map((repo) => ({ name: repo.name, description: repo.description, language: repo.language }))
     return this.state.set('loading', false).set('allRepos', repos)
   }
 

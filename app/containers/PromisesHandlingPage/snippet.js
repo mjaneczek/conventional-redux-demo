@@ -19,6 +19,7 @@ const GitHubRepos = (p,d) => <div>
   </div>}
 </div>
 
+// connect method
 export default connectInteractors(GitHubRepos, ['github']);
 
 // interactor
