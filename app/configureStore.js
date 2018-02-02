@@ -7,7 +7,8 @@ import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
 import createReducer from './reducers';
 import { createLogger } from 'redux-logger'
-import { conventionalReduxMiddleware, setRecreateReducerFunction } from 'conventional-redux'
+import { conventionalReduxMiddleware, setRecreateReducerFunction, registerInteractors } from 'conventional-redux'
+import RouteCounterInteractor from './RouteCounterInteractor';
 
 const logger = createLogger({
   stateTransformer: (state) => {
@@ -37,6 +38,7 @@ export default function configureStore(initialState = {}, history) {
     applyMiddleware(...middlewares),
   ];
 
+
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers =
@@ -62,6 +64,11 @@ export default function configureStore(initialState = {}, history) {
 
   // only for debug purpose!
   window.store = store;
+
+  // conventional redux config
+  registerInteractors({
+    route_counter: new RouteCounterInteractor()
+  });
 
   setRecreateReducerFunction(() => store.replaceReducer(createReducer(store.injectedReducers)));
 
