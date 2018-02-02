@@ -20,7 +20,7 @@ const GitHubRepos = (p,d) => <div>
     {p('github.error') && <Alert message={p('github.error')} /> }
 
     <ListGroup>
-      {p('github.repos').map(repo => <ListGroupItem name={repo.name} tag={repo.language} description={repo.description} />)}
+      {p('github.repos').map(repo => <ListGroupItem key={repo.id} name={repo.name} tag={repo.language} description={repo.description} />)}
     </ListGroup>
   </div>}
 </div>
