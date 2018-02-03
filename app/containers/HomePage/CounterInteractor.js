@@ -22,4 +22,8 @@ export default class CounterInteractor {
   onDouble() {
     return this.state * 2;
   }
+
+  onDoubleAsync() {
+    return this.state;
+  }
 }

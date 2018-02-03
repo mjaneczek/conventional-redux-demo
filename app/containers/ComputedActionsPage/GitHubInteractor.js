@@ -30,7 +30,7 @@ export default class GitHubInteractor {
   }
 
   onFetchSuccess(response) {
-    const repos = response.map((repo) => ({ name: repo.name, description: repo.description, language: repo.language }))
+    const repos = response.map((repo) => ({ id: repo.id, name: repo.name, description: repo.description, language: repo.language }))
     return this.state.set('loading', false).set('allRepos', repos)
   }
 
