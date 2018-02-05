@@ -10,7 +10,6 @@ export default class DynamicInteractorsPage extends React.Component {
     replaceDynamicInteractors({});
   }
 
-
   render() {
     return(
       <div>
@@ -27,7 +26,6 @@ export default class DynamicInteractorsPage extends React.Component {
         <Code code={dynamicInteractorsSnippet()} />
 
         <h4 className="mt-4">This page registers no dynamic interactors. Only external reducers (route) and static interactors (route_counter) are available. Check out footer on different pages to see how it works.</h4>
-
       </div>
     )
   }
